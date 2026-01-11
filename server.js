@@ -1,6 +1,7 @@
 // server.js
 import express from 'express';
 import paymentRoutes from './src/routes/paymentRoutes.js';
+import cors from 'cors';
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.use('/api', paymentRoutes);
 // Agora as rotas serão: 
 // GET  http://localhost:3000/api/pagar
 // POST http://localhost:3000/api/webhook/android
+
+//Cors
+app.use(cors());
 
 const PORT = 3000;
 app.listen(PORT, () => {
